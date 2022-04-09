@@ -32,7 +32,7 @@ export default {
 
       @discourseComputed(
         "excerptsRouter.currentRouteName",
-        "excerptsRouter.currentRoute.attributes.id"
+        "excerptsRouter.currentRoute.attributes.id",
         "router.currentRoute.attributes.tag.id"
       )
        excerptsViewingTag(currentRouteName, legacyTagId, tagId) {
