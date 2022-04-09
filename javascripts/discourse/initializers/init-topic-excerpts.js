@@ -33,10 +33,11 @@ export default {
       @discourseComputed(
         "excerptsRouter.currentRouteName",
         "excerptsRouter.currentRoute.attributes.id"
+        "router.currentRoute.attributes.tag.id"
       )
-      excerptsViewingTag(currentRouteName, tagId) {
-        if (!currentRouteName.match(/^tag\.show/)) return;
-        return tagId;
+       excerptsViewingTag(currentRouteName, legacyTagId, tagId) {
+        if (!currentRouteName.match(/^tags?\.show/)) return;
+        return tagId || legacyTagId;
       },
 
       @discourseComputed("excerptsViewingCategoryId", "excerptsViewingTag")
